@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ("../partials/head") %>
+</head>
+
+<body>
+<%- include ("../partials/menu") %>
+
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-11">
+            <h1><%= title %></h1>
+            <a href="/contact-list/add" class="btn btn-primary" role="button">
+              <i class="fas fa-plus-circle"> Add a contact </i>
+             </a>
+
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr class="d-flex">
+                        <th class="text-center col-4">Name</th>
+                        <th class="text-center col-4">email</th>
+                        <th class="text-center col-4">Phone number</th>
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < ContactList.length; count++) { %>
+                    <tr class="d-flex">
+                            <td class="text-center col-4"><%= ContactList[count].name %></td>
+                            <td class="text-center col-4"><%= ContactList[count].email %></td>
+                            <td class="text-center col-4"><%= ContactList[count].number %></td>
+                            <td class="text-center col-4">
+                            <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                              <i class="fas fa-pencil alt"></i> Edit
+                            </a>
+                        </td>
+                        <td class="text-center col-4">
+                             <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                              <i class="fas fa-trash-alt"></i> Delete
+                             </a>
+                        </td> 
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+</body>
+
+ <%- include ("../partials/script") %>
+  <%- include ("../partials/footer") %>
+
+</html>

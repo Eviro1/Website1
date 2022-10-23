@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ("../partials/head") %>
+</head>
+
+<body>
+<%- include ("../partials/menu") %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Name"
+                    name="name"
+                    value="<%= contact.name %>"
+                     required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numberTextField">Phone Number</label>
+                    <input type="text" class="form-control"
+                    id="numberTextField"
+                    placeholder="Enter the Phone number"
+                    name="number"
+                    value="<%= contact.number %>"
+                     required>
+                </div>
+                <div class="form-group">
+                    <label for="emailTextField">Email</label>
+                    <input type="text" class="form-control"
+                    id="emailTextField"
+                    placeholder="Enter the Email Address"
+                    name="email" 
+                    value="<%= contact.email %>"
+                    required>
+                </div>
+               
+                <button class="btn btn-primary" type="edit">
+                    <i class="fas fa-edit"></i> Edit</button>
+
+                    <a href="/contact-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+    </div> 
+
+
+</body>
+
+<%- include ("../partials/script") %>
+ <%- include ("../partials/footer") %>
+
+</html>
