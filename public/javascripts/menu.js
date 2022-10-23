@@ -20,4 +20,4 @@
     window.addEventListener("load", Start);
 	
 	
-});
+})();
