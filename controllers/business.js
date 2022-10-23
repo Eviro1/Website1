@@ -55,7 +55,7 @@ module.exports.displayEditPage= (req,res,next) => {
       res.end(err);
   } else{
       //show the edit view
-      res.render('business/edit.ejs', {title:'Edit Contact', contact: contacttoedit})
+      res.render('./business/edit', {title:'Edit Contact', contact: contacttoedit})
   }
     });
 
